@@ -1,5 +1,6 @@
 package com.edupay.edupay.ui.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import androidx.navigation.Navigation
 
 import com.edupay.edupay.R
 import com.edupay.edupay.databinding.FragmentLoginBinding
+import com.edupay.edupay.ui.Activity.LandingActivity
 import com.edupay.edupay.viewmodel.AuthViewModel
 
 /**
@@ -38,6 +40,14 @@ class LoginFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
         binding.lifecycleOwner = this
         binding.viewmodel = viewModel
+
+        binding.loginBtn.setOnClickListener {
+            startActivity(Intent(this.requireActivity(), LandingActivity::class.java))
+        }
+        binding.signup.setOnClickListener {
+            navController.navigate(R.id.action_loginFragment_to_signUpFragment)
+        }
+
         return binding.root
     }
 

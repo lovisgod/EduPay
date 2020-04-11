@@ -7,5 +7,25 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.edupay.edupay.ui.Fragments.LoginFragment"
-        android:label="LoginFragment" />
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.edupay.edupay.ui.Fragments.SignUpFragment"
+        android:label="SignUpFragment" >
+        <action
+            android:id="@+id/action_signUpFragment_to_verifyFragment"
+            app:destination="@id/verifyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyFragment"
+        android:name="com.edupay.edupay.ui.Fragments.VerifyFragment"
+        android:label="VerifyFragment" >
+        <action
+            android:id="@+id/action_verifyFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>

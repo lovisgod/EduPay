@@ -58,6 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintTop_toBottomOf="@id/input_layout_studentname">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/input_fullname"
@@ -72,16 +73,103 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintTop_toBottomOf="@id/input_layout_student_id">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/input_username"
+                    android:id="@+id/input_schoolname"
                     android:inputType="textAutoComplete"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_schoolname"
                     />
             </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_parentnumber"
+                app:layout_constraintLeft_toLeftOf="@id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintTop_toBottomOf="@id/input_layout_parentname">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_parentnumber"
+                    android:inputType="textAutoComplete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_parentnumber"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_parentname"
+                app:layout_constraintLeft_toLeftOf="@id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintTop_toBottomOf="@id/input_layout_schoolname">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_parentname"
+                    android:inputType="textAutoComplete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_schoolname"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_parentemail"
+                app:layout_constraintLeft_toLeftOf="@id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintTop_toBottomOf="@id/input_layout_parentnumber">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_username"
+                    android:inputType="textAutoComplete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_parentemail"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/loginBtn"
+                android:layout_width="343dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/dimen_24"
+                android:layout_marginEnd="@dimen/dimen_8"
+                android:background="@color/colorPrimary"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="@string/sign_up"
+                android:textStyle="bold"
+                app:cornerRadius="@dimen/dimen_8"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintLeft_toLeftOf="@id/signupLayout"
+                app:layout_constraintRight_toRightOf="@id/signupLayout"
+                app:layout_constraintTop_toBottomOf="@id/input_layout_parentemail"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="@dimen/dimen_8" />
+
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_kit"
+                style="@style/SpinKitView.Small.FadingCircle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="invisible"
+                app:SpinKit_Color="@color/colorWhite"
+                android:elevation="@dimen/dimen_8"
+                app:layout_constraintRight_toLeftOf="@id/loginBtn"
+                app:layout_constraintTop_toTopOf="@+id/loginBtn"
+                app:layout_constraintBottom_toBottomOf="@+id/loginBtn"
+                android:layout_marginLeft="@dimen/margin"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
