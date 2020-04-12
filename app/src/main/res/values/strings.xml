@@ -17,4 +17,6 @@
     <string name="hint_schoolname">Enter Your School Name</string>
     <string name="hint_parentnumber">Enter Parent and Guildian Number</string>
     <string name="hint_parentemail">Enter Parent Email</string>
+    <string name="nav_header_title">User name</string>
+    <string name="nav_header_subtitle">example@host.com</string>
 </resources>
