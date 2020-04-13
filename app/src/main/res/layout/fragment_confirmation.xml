@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.Fragments.FeeDetailsFragment">
+        tools:context=".ui.Fragments.ConfirmationFragment">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/page_title"
@@ -84,6 +84,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="left"
                     android:text="Mark Essien"
+                    android:textColor="#000000"
                     android:background="@color/colorMilk"
                     android:textSize="15sp"
                     android:padding="15dp"
@@ -91,16 +92,26 @@
                 </com.google.android.material.textview.MaterialTextView>
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/fee_amount"
+                    android:id="@+id/student_id_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:gravity="center"
-                    android:text="N40000"
-                    android:background="@color/colorPrimaryDark"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="20sp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="Student ID"
+                    android:background="@color/colorWhite"
+                    android:textSize="15sp"
+                    android:padding="15dp"
+                    android:textStyle="bold">
+                </com.google.android.material.textview.MaterialTextView>
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/student_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:background="@color/colorMilk"
+                    android:textSize="15sp"
+                    android:padding="15dp"
                     android:textStyle="bold">
                 </com.google.android.material.textview.MaterialTextView>
 
