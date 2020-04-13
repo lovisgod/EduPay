@@ -19,6 +19,6 @@
     <string name="hint_parentemail">Enter Parent Email</string>
     <string name="nav_header_title">User name</string>
     <string name="nav_header_subtitle">example@host.com</string>
-    <string name="submit">SUBMIT</string>
+    <string name="make_payment">Make Payment</string>
     <string name="confirmation_page">Confirmation Page</string>
 </resources>

@@ -16,5 +16,14 @@
     <fragment
         android:id="@+id/feeDetailsFragment"
         android:name="com.edupay.edupay.ui.Fragments.FeeDetailsFragment"
-        android:label="FeeDetailsFragment" />
+        android:label="FeeDetailsFragment" >
+        <action
+            android:id="@+id/action_feeDetailsFragment_to_confirmationFragment"
+            app:destination="@id/confirmationFragment"
+            app:popUpTo="@id/feeDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="com.edupay.edupay.ui.Fragments.ConfirmationFragment"
+        android:label="ConfirmationFragment" />
 </navigation>

@@ -52,9 +52,7 @@ class FeeDetailsFragment : Fragment() {
         }
 
         binding.submitBtn.setOnClickListener {
-            Snackbar.make(binding.totalAmount, "This will go the payment gateway page", Snackbar.LENGTH_LONG)
-                .setBackgroundTint(this.requireContext().getColor(R.color.colorAccent))
-                .show()
+           navController.navigate(R.id.action_feeDetailsFragment_to_confirmationFragment)
         }
         return binding.root
     }
