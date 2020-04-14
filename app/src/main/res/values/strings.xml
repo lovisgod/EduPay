@@ -21,4 +21,6 @@
     <string name="nav_header_subtitle">example@host.com</string>
     <string name="make_payment">Make Payment</string>
     <string name="confirmation_page">Confirmation Page</string>
+    <string name="rave_encryption_key">FLWSECK_TEST17720760331c</string>
+    <string name="rave_public_key">FLWPUBK_TEST-cc5cd42f6cd21196275f0021533d0ac9-X</string>
 </resources>

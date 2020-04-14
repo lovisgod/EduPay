@@ -44,9 +44,16 @@ class ConfirmationFragment : Fragment() {
         binding.viewmodel = viewModel
 
         binding.submitBtn.setOnClickListener {
-            Snackbar.make(binding.pageTitle, "This will go the payment gateway page", Snackbar.LENGTH_LONG)
-                .setBackgroundTint(this.requireContext().getColor(R.color.colorAccent))
-                .show()
+//            Snackbar.make(binding.pageTitle, "This will go the payment gateway page", Snackbar.LENGTH_LONG)
+//                .setBackgroundTint(this.requireContext().getColor(R.color.colorAccent))
+//                .show()
+            val bundle = Bundle()
+            bundle.putDouble("amount", binding.feeAmount.text.toString().split(" ").get(1).toDouble())
+            bundle.putString("fname", binding.studentName.text.toString().split(" ").get(0))
+            bundle.putString("lname", binding.studentName.text.toString().split(" ").get(1))
+            bundle.putString("desc", binding.feeTitle.text.toString())
+            bundle.putString("parent_email", binding.parentEmail.text.toString())
+            navController.navigate(R.id.action_confirmationFragment_to_paymentFragment, bundle)
         }
         return binding.root
     }
