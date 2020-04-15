@@ -65,7 +65,7 @@ class LandingActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
             if (destination.id != R.id.landingFragment ){
                 appBarLayout.visibility = View.VISIBLE
                 menuIcon.visibility = View.GONE
-                toolbar.title = "EduPay"
+                toolbar.title = ""
             }
 
             if (destination.id  == R.id.landingFragment){
@@ -89,7 +89,7 @@ class LandingActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         drawerLayout.closeDrawers()
         val id = item.itemId
         if (id == R.id.nav_history) {
-            Toast.makeText(this, "history clicked", Toast.LENGTH_LONG).show()
+            navController.navigate(R.id.historyFragment)
         }
         return true
     }

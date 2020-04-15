@@ -5,3 +5,10 @@ data class FeeItem (
     var amount: String,
     var category: String
 )
+
+data class FeeItemHistory (
+    var student_name: String,
+    var amount: String,
+    var category: String,
+    var payment_date: String
+)

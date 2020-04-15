@@ -40,4 +40,8 @@
             app:destination="@id/landingFragment"
             app:popUpTo="@id/landingFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.edupay.edupay.ui.Fragments.HistoryFragment"
+        android:label="HistoryFragment" />
 </navigation>
