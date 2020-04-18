@@ -50,6 +50,7 @@ class LandingActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
 
         var menuIcon = findViewById<ImageView>(R.id.menu_icon)
         menuIcon.setOnClickListener {
+            println("this is working")
             drawerLayout.openDrawer(Gravity.LEFT)
         }
 
@@ -62,13 +63,13 @@ class LandingActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         }
 
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
-            if (destination.id != R.id.landingFragment ){
+            if (destination.id != R.id.historyFragment ){
                 appBarLayout.visibility = View.VISIBLE
                 menuIcon.visibility = View.GONE
                 toolbar.title = ""
             }
 
-            if (destination.id  == R.id.landingFragment){
+            if (destination.id  == R.id.historyFragment){
                 appBarLayout.visibility = View.GONE
                 menuIcon.visibility = View.VISIBLE
             }

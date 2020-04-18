@@ -42,6 +42,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             tools:listitem="@layout/fee_history_item">
         </androidx.recyclerview.widget.RecyclerView>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/pay_fee_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:drawableTop="@drawable/ic_add_24dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginEnd="@dimen/fab_margin">
+        </com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

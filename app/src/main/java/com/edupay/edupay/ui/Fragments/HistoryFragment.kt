@@ -48,6 +48,10 @@ class HistoryFragment : Fragment() {
         binding.feeLists.layoutManager = layoutManager
         binding.feeLists.adapter = adapter
 
+        binding.payFeeBtn.setOnClickListener {
+            navController.navigate(R.id.action_historyFragment_to_chooseSchoolFragment)
+        }
+
         val sampleFee1 = FeeItemHistory(student_name = "Sam sam", amount = "N40,000", category = "Uniform Fee", payment_date = "14TH Jan")
         val sampleFee2 = FeeItemHistory(student_name = "Sam sam", amount = "N100,000", category = "Tution Fee", payment_date = "14TH Jan")
         val sampleFee3 = FeeItemHistory(student_name = "Sam sam", amount = "N10,000", category = "FoodFee", payment_date = "14TH Jan")

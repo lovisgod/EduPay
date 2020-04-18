@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/app_nav_graph"
-    app:startDestination="@id/landingFragment">
+    app:startDestination="@id/historyFragment">
 
     <fragment
         android:id="@+id/landingFragment"
@@ -43,5 +43,19 @@
     <fragment
         android:id="@+id/historyFragment"
         android:name="com.edupay.edupay.ui.Fragments.HistoryFragment"
-        android:label="HistoryFragment" />
+        android:label="HistoryFragment" >
+        <action
+            android:id="@+id/action_historyFragment_to_chooseSchoolFragment"
+            app:destination="@id/chooseSchoolFragment"
+            app:popUpTo="@id/historyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseSchoolFragment"
+        android:name="com.edupay.edupay.ui.Fragments.ChooseSchoolFragment"
+        android:label="ChooseSchoolFragment" >
+        <action
+            android:id="@+id/action_chooseSchoolFragment_to_landingFragment"
+            app:destination="@id/landingFragment"
+            app:popUpTo="@id/chooseSchoolFragment" />
+    </fragment>
 </navigation>
