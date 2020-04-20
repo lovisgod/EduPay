@@ -7,8 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.edupay.edupay.R
 import com.edupay.edupay.databinding.PeriodItemBinding
 import com.edupay.edupay.model.Period
+import com.edupay.edupay.viewmodel.BusinessViewModel
 
-class PeriodListAdapter: RecyclerView.Adapter<PeriodListAdapter.Viewholder>()  {
+class PeriodListAdapter(var viewModel: BusinessViewModel): RecyclerView.Adapter<PeriodListAdapter.Viewholder>()  {
     private  var periodList : ArrayList<Period> = ArrayList()
 
     class Viewholder(itemView: PeriodItemBinding): RecyclerView.ViewHolder(itemView.root) {
@@ -32,7 +33,10 @@ class PeriodListAdapter: RecyclerView.Adapter<PeriodListAdapter.Viewholder>()  {
 
     override fun onBindViewHolder(holder: Viewholder, position: Int) {
         var period = periodList.get(position)
-
+        holder.label.text = period.label
+        holder.layout.setOnClickListener {
+            viewModel.setPeriodText(period.label)
+        }
     }
 
     fun setDataList (list: ArrayList<Period>) {

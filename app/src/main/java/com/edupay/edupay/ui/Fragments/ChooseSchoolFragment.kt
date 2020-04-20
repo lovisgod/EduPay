@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -40,9 +41,23 @@ class ChooseSchoolFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.viewmodel = viewModel
 
+
+        viewModel._classText.observe(viewLifecycleOwner, Observer {
+            binding.inputLayoutClass.text = it
+        })
+
+        viewModel._periodText.observe(viewLifecycleOwner, Observer {
+            binding.inputLayoutSchoolSession.text =it
+        })
+
         binding.inputLayoutSchoolSession.setOnClickListener {
             println("it's getting here")
-            val bottom = ChooseBottomFragment.newInstance(R.layout.period_layout)
+            val bottom = ChooseBottomFragment.newInstance(R.layout.period_layout,viewModel)
+            bottom?.show(this.requireActivity().supportFragmentManager.beginTransaction(), "dialog_playback")
+        }
+
+        binding.inputLayoutClass.setOnClickListener {
+            val bottom = ChooseBottomFragment.newInstance(R.layout.class_layout,viewModel)
             bottom?.show(this.requireActivity().supportFragmentManager.beginTransaction(), "dialog_playback")
         }
 

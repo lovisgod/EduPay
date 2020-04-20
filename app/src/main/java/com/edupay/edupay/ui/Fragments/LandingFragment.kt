@@ -31,7 +31,7 @@ class LandingFragment : Fragment() {
         val activity = requireNotNull(this.activity) {
             "You can only access the viewModel after onActivityCreated()"
         }
-        ViewModelProvider(this, BusinessViewModel.Factory(activity.application))
+        ViewModelProvider(activity, BusinessViewModel.Factory(activity.application))
             .get(BusinessViewModel::class.java)
     }
 

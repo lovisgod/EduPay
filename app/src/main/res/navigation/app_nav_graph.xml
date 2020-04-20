@@ -58,4 +58,13 @@
             app:destination="@id/landingFragment"
             app:popUpTo="@id/chooseSchoolFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.edupay.edupay.ui.Fragments.EditProfileFragment"
+        android:label="EditProfileFragment" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_historyFragment"
+            app:destination="@id/historyFragment"
+            app:popUpTo="@id/historyFragment" />
+    </fragment>
 </navigation>

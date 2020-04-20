@@ -92,6 +92,10 @@ class LandingActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         if (id == R.id.nav_history) {
             navController.navigate(R.id.historyFragment)
         }
+
+        if (id == R.id.nav_edit_profile) {
+            navController.navigate(R.id.editProfileFragment)
+        }
         return true
     }
 }
