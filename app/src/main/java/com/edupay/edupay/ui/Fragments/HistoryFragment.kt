@@ -48,6 +48,10 @@ class HistoryFragment : Fragment() {
         binding.feeLists.layoutManager = layoutManager
         binding.feeLists.adapter = adapter
 
+        binding.payHeader.setOnClickListener {
+            navController.navigate(R.id.action_historyFragment_to_chooseSchoolFragment)
+        }
+
         binding.payFeeBtn.setOnClickListener {
             navController.navigate(R.id.action_historyFragment_to_chooseSchoolFragment)
         }

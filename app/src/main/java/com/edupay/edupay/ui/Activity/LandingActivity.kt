@@ -63,7 +63,7 @@ class LandingActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         }
 
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
-            if (destination.id != R.id.historyFragment ){
+            if (destination.id != R.id.historyFragment){
                 appBarLayout.visibility = View.VISIBLE
                 menuIcon.visibility = View.GONE
                 toolbar.title = ""
@@ -73,6 +73,11 @@ class LandingActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
                 appBarLayout.visibility = View.GONE
                 menuIcon.visibility = View.VISIBLE
             }
+
+            if (destination.id  == R.id.chooseSchoolFragment){
+                appBarLayout.visibility = View.GONE
+            }
+
         }
 
         /*

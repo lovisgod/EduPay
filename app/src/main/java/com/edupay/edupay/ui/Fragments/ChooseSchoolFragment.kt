@@ -50,6 +50,10 @@ class ChooseSchoolFragment : Fragment() {
             binding.inputLayoutSchoolSession.text =it
         })
 
+        binding.historyHeader.setOnClickListener {
+            navController.navigate(R.id.action_chooseSchoolFragment_to_historyFragment)
+        }
+
         binding.inputLayoutSchoolSession.setOnClickListener {
             println("it's getting here")
             val bottom = ChooseBottomFragment.newInstance(R.layout.period_layout,viewModel)

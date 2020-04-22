@@ -17,18 +17,36 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/history_header"
-            android:layout_width="300dp"
+            android:layout_width="120dp"
             android:layout_height="50dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="70dp"
+            app:layout_constraintRight_toLeftOf="@+id/pay_header"
             android:layout_marginTop="60dp"
             android:textSize="@dimen/twenty_sp"
             android:gravity="center"
             android:textColor="@color/colorWhite"
             android:background="@color/colorPrimary"
             android:textStyle="bold"
-            android:text="PAYMENT HISTORY">
+            android:text="HISTORY">
+        </com.google.android.material.textview.MaterialTextView>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pay_header"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/history_header"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="@dimen/fifty_dp"
+            android:textSize="@dimen/twenty_sp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"
+            android:background="@color/colorMilk"
+            android:textStyle="bold"
+            android:text="PAY">
         </com.google.android.material.textview.MaterialTextView>
 
         <androidx.recyclerview.widget.RecyclerView

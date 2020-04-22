@@ -57,6 +57,11 @@
             android:id="@+id/action_chooseSchoolFragment_to_landingFragment"
             app:destination="@id/landingFragment"
             app:popUpTo="@id/chooseSchoolFragment" />
+        <action
+            android:id="@+id/action_chooseSchoolFragment_to_historyFragment"
+            app:destination="@id/historyFragment"
+            app:popEnterAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/historyFragment" />
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
