@@ -45,10 +45,29 @@
                 android:layout_marginBottom="16dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/input_companyname"
+                    android:id="@+id/input_studentname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_studentname"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_parent_name"
+                app:layout_constraintLeft_toLeftOf="@id/input_layout_studentname"
+                app:layout_constraintTop_toBottomOf="@id/input_layout_studentname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="16dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_parent_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_parentname"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -59,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                app:layout_constraintTop_toBottomOf="@id/input_layout_studentname">
+                app:layout_constraintTop_toBottomOf="@id/input_layout_parent_name">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/input_fullname"
                     android:layout_width="match_parent"

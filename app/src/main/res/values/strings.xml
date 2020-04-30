@@ -24,4 +24,5 @@
     <string name="rave_encryption_key">FLWSECK_TEST17720760331c</string>
     <string name="rave_public_key">FLWPUBK_TEST-cc5cd42f6cd21196275f0021533d0ac9-X</string>
     <string name="save">Save Details</string>
+    <string name="hint_parentname">Parent or Guardian Name</string>
 </resources>
