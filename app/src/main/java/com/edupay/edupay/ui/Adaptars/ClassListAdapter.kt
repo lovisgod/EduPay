@@ -7,8 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.edupay.edupay.R
 import com.edupay.edupay.databinding.ClassItemBinding
 import com.edupay.edupay.databinding.PeriodItemBinding
+import com.edupay.edupay.model.CloseDialog
 import com.edupay.edupay.model.Period
 import com.edupay.edupay.viewmodel.BusinessViewModel
+import org.greenrobot.eventbus.EventBus
 
 class ClassListAdapter(var viewModel: BusinessViewModel): RecyclerView.Adapter<ClassListAdapter.Viewholder>()  {
     private  var classList : ArrayList<Period> = ArrayList()
@@ -38,6 +40,7 @@ class ClassListAdapter(var viewModel: BusinessViewModel): RecyclerView.Adapter<C
         holder.label.text = class_.label
         holder.layout.setOnClickListener {
             viewModel.setClassText(class_.label)
+            EventBus.getDefault().post(CloseDialog(event = "close"))
         }
     }
 

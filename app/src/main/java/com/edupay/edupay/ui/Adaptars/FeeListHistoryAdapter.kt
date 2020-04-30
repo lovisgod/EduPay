@@ -20,6 +20,7 @@ class FeeListHistoryAdapter: RecyclerView.Adapter<FeeListHistoryAdapter.Viewhold
         val amount = itemView.feeAmount
         val category = itemView.feeCategory
         val date = itemView.dateText
+        val session = itemView.feeSession
         val layout = itemView.feeCard
     }
 
@@ -43,7 +44,7 @@ class FeeListHistoryAdapter: RecyclerView.Adapter<FeeListHistoryAdapter.Viewhold
         holder.amount.text = fee.amount
         holder.category.text = fee.category
         holder.date.text = fee.payment_date
-
+        holder.session.text = fee.session
         holder.layout.setOnClickListener {
 
         }

@@ -5,45 +5,47 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.edupay.edupay.R
-import com.edupay.edupay.databinding.PeriodItemBinding
+import com.edupay.edupay.databinding.ClassItemBinding
+import com.edupay.edupay.databinding.TermItemBinding
 import com.edupay.edupay.model.CloseDialog
 import com.edupay.edupay.model.Period
 import com.edupay.edupay.viewmodel.BusinessViewModel
 import org.greenrobot.eventbus.EventBus
 
-class PeriodListAdapter(var viewModel: BusinessViewModel): RecyclerView.Adapter<PeriodListAdapter.Viewholder>()  {
-    private  var periodList : ArrayList<Period> = ArrayList()
+class TermListAdapter(var viewModel: BusinessViewModel): RecyclerView.Adapter<TermListAdapter.Viewholder>()  {
+    private  var termList : ArrayList<Period> = ArrayList()
 
-    class Viewholder(itemView: PeriodItemBinding): RecyclerView.ViewHolder(itemView.root) {
-       val label = itemView.periodLabel
-        val layout = itemView.period
+    class Viewholder(itemView: TermItemBinding): RecyclerView.ViewHolder(itemView.root) {
+        val label = itemView.termLabel
+        val layout = itemView.termLa
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Viewholder {
-        val itemView : PeriodItemBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),
-            R.layout.period_item, parent, false)
+        val itemView : TermItemBinding = DataBindingUtil.inflate(
+            LayoutInflater.from(parent.context),
+            R.layout.term_item, parent, false)
         return  Viewholder(itemView)
     }
 
     override fun getItemCount(): Int {
-        if (this.periodList.isNotEmpty()) {
-            return periodList.size
+        if (this.termList.isNotEmpty()) {
+            return termList.size
         }
 
         return  0
     }
 
     override fun onBindViewHolder(holder: Viewholder, position: Int) {
-        var period = periodList.get(position)
-        holder.label.text = period.label
+        var term = termList.get(position)
+        holder.label.text = term.label
         holder.layout.setOnClickListener {
-            viewModel.setPeriodText(period.label)
+            viewModel.setTermText(term.label)
             EventBus.getDefault().post(CloseDialog(event = "close"))
         }
     }
 
     fun setDataList (list: ArrayList<Period>) {
-        this.periodList = list
+        this.termList = list
         notifyDataSetChanged()
     }
 }

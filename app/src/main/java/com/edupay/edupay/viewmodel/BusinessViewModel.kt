@@ -14,6 +14,9 @@ class BusinessViewModel(application: Application): ViewModel() {
     private val class_text = MutableLiveData<String>()
     val _classText:LiveData<String> get() = class_text
 
+    private val term_text = MutableLiveData<String>()
+    val _termText:LiveData<String> get() = term_text
+
     init {
         period_text.value = "Choose Academic Period"
         class_text.value = "Choose Class"
@@ -34,6 +37,11 @@ class BusinessViewModel(application: Application): ViewModel() {
     fun setClassText(text:String) {
         this.class_text.value = text
         println(this.class_text.value)
+    }
+
+    fun setTermText(text:String) {
+        this.term_text.value = text
+        println(this.term_text.value)
     }
 
 

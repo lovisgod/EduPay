@@ -10,5 +10,6 @@ data class FeeItemHistory (
     var student_name: String,
     var amount: String,
     var category: String,
-    var payment_date: String
+    var payment_date: String,
+    var session: String
 )

@@ -13,8 +13,13 @@ import androidx.navigation.Navigation
 
 import com.edupay.edupay.R
 import com.edupay.edupay.databinding.FragmentChooseSchoolBinding
+import com.edupay.edupay.model.CloseDialog
 import com.edupay.edupay.ui.BottonSheets.ChooseBottomFragment
 import com.edupay.edupay.viewmodel.BusinessViewModel
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 
 /**
  * A simple [Fragment] subclass.
@@ -22,6 +27,7 @@ import com.edupay.edupay.viewmodel.BusinessViewModel
 class ChooseSchoolFragment : Fragment() {
     private lateinit var binding: FragmentChooseSchoolBinding
     private lateinit var navController: NavController
+    private lateinit var bottom: ChooseBottomFragment
 
     private val viewModel: BusinessViewModel by lazy {
         val activity = requireNotNull(this.activity) {
@@ -50,19 +56,28 @@ class ChooseSchoolFragment : Fragment() {
             binding.inputLayoutSchoolSession.text =it
         })
 
+        viewModel._termText.observe(viewLifecycleOwner, Observer {
+            binding.inputLayoutTerm.text =it
+        })
+
         binding.historyHeader.setOnClickListener {
             navController.navigate(R.id.action_chooseSchoolFragment_to_historyFragment)
         }
 
         binding.inputLayoutSchoolSession.setOnClickListener {
             println("it's getting here")
-            val bottom = ChooseBottomFragment.newInstance(R.layout.period_layout,viewModel)
-            bottom?.show(this.requireActivity().supportFragmentManager.beginTransaction(), "dialog_playback")
+            bottom = ChooseBottomFragment.newInstance(R.layout.period_layout,viewModel)!!
+            bottom.show(this.requireActivity().supportFragmentManager.beginTransaction(), "dialog_playback")
         }
 
         binding.inputLayoutClass.setOnClickListener {
-            val bottom = ChooseBottomFragment.newInstance(R.layout.class_layout,viewModel)
-            bottom?.show(this.requireActivity().supportFragmentManager.beginTransaction(), "dialog_playback")
+            bottom = ChooseBottomFragment.newInstance(R.layout.class_layout,viewModel)!!
+            bottom.show(this.requireActivity().supportFragmentManager.beginTransaction(), "dialog_playback")
+        }
+
+        binding.inputLayoutTerm.setOnClickListener {
+            bottom = ChooseBottomFragment.newInstance(R.layout.term_layout,viewModel)!!
+            bottom.show(this.requireActivity().supportFragmentManager.beginTransaction(), "dialog_playback")
         }
 
         binding.loginBtn.setOnClickListener {
@@ -70,6 +85,30 @@ class ChooseSchoolFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+
+    /**
+     * handle event listening
+     */
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun onCloseDialog(event: CloseDialog) {
+        println("this is getting here ooo")
+        bottom.dismiss()
+    }
+
+
+    override fun onStart() {
+        super.onStart()
+        // registers the event listener
+        EventBus.getDefault().register(this)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        // unregister the event listener
+        EventBus.getDefault().unregister(this)
     }
 
 }

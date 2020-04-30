@@ -28,7 +28,7 @@
          android:textColor="@color/colorWhite"
          android:background="@color/colorPrimary"
          android:textStyle="bold"
-         android:text="PAYABLE FEES">
+         android:text="Fee Payment for Basic 1 \n First Term   2020/2021 Session">
      </com.google.android.material.textview.MaterialTextView>
 
      <androidx.recyclerview.widget.RecyclerView
